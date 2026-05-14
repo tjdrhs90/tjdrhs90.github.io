@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy — ChallengeMe</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f5f5f7;
+            color: #1d1d1f;
+            line-height: 1.7;
+        }
+        .container {
+            max-width: 820px;
+            margin: 0 auto;
+            padding: 40px 24px;
+        }
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 8px;
+        }
+        .app-id {
+            color: #6e6e73;
+            font-size: 0.9rem;
+        }
+        .effective-date {
+            color: #6e6e73;
+            margin-bottom: 32px;
+        }
+        h2 {
+            font-size: 1.25rem;
+            margin-top: 32px;
+            margin-bottom: 12px;
+        }
+        p, li {
+            font-size: 1rem;
+            color: #424245;
+            margin-bottom: 8px;
+        }
+        ul {
+            padding-left: 24px;
+            margin-bottom: 12px;
+        }
+        a {
+            color: #0071e3;
+            text-decoration: none;
+        }
+        a:hover { text-decoration: underline; }
+        .lang-switcher {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 32px;
+        }
+        .lang-switcher button {
+            padding: 6px 14px;
+            border: 1px solid #d2d2d7;
+            background: #fff;
+            border-radius: 999px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            color: #1d1d1f;
+        }
+        .lang-switcher button:hover { background: #f0f0f0; }
+        .lang-switcher button.active {
+            background: #1d1d1f;
+            color: #fff;
+            border-color: #1d1d1f;
+        }
+        .lang-content { display: none; }
+        .lang-content.active { display: block; }
+        .callout {
+            background: #eaf6ff;
+            border-left: 4px solid #0071e3;
+            padding: 14px 18px;
+            border-radius: 8px;
+            margin: 16px 0;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 24px;
+            font-size: 0.95rem;
+        }
+        code {
+            background: #f0f0f3;
+            padding: 1px 6px;
+            border-radius: 4px;
+            font-size: 0.95em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../" class="back-link">&larr; Back to all policies</a>
+
+        <div class="lang-switcher">
+            <button onclick="switchLang('en')" id="btn-en" class="active">English</button>
+            <button onclick="switchLang('ko')" id="btn-ko">한국어</button>
+        </div>
+
+        <!-- ====================  ENGLISH  ==================== -->
+        <div class="lang-content active" id="lang-en">
+            <h1>ChallengeMe — Privacy Policy</h1>
+            <p class="app-id">App: ChallengeMe &middot; Bundle ID: <code>com.gonigon.challengeme</code></p>
+            <p class="effective-date">Last updated: May 14, 2026</p>
+
+            <div class="callout">
+                <strong>Summary.</strong> ChallengeMe is a 100% on-device app. It does
+                not operate any backend server, does not require an account, and does
+                not transmit user videos, audio, or pose data to any external service —
+                including any third-party AI service. The AI pose comparison is performed
+                entirely on your device using Google's on-device ML Kit SDK.
+            </div>
+
+            <h2>1. Who we are</h2>
+            <p>This privacy policy applies only to the mobile application "ChallengeMe"
+            (the "App"), published by Gonigon. For our other apps, please see the
+            individual policy for each app.</p>
+
+            <h2>2. Data we access</h2>
+            <p>The App accesses the following data only on the user's device, only for
+            the purpose stated, and only with the user's permission via the OS prompt:</p>
+            <ul>
+                <li><strong>Camera</strong> — to record the user's dance video in real time.</li>
+                <li><strong>Microphone</strong> — to capture audio together with the video.</li>
+                <li><strong>Photo Library</strong> — to let the user pick an existing dance
+                    video from their gallery, or save a recorded video back to Photos.</li>
+            </ul>
+            <p>The recorded or selected video file is stored only in the App's local
+            sandbox on the user's device. It is never uploaded to any server.</p>
+
+            <h2>3. On-device AI processing — no third-party AI service</h2>
+            <p>The App's "AI comparison" feature uses Google's <strong>ML Kit Pose
+            Detection</strong>, which is an on-device SDK. Per Google's official
+            documentation, ML Kit "performs full body pose tracking on the device."
+            Reference:
+            <a href="https://developers.google.com/ml-kit/vision/pose-detection"
+               target="_blank" rel="noopener">
+                developers.google.com/ml-kit/vision/pose-detection
+            </a>.</p>
+            <p>Concretely:</p>
+            <ul>
+                <li>The pose model file is downloaded once by Google Play Services /
+                    iOS framework on first use (governed by Google's ML Kit policy).
+                    After that, all inference is fully offline.</li>
+                <li>No video frames, audio data, or extracted pose coordinates are
+                    transmitted to any AI inference server, cloud function, or other
+                    third-party AI service.</li>
+                <li>The 33-joint pose coordinates extracted by ML Kit are stored as a
+                    local JSON file in the App's sandbox, and the per-frame similarity
+                    score is computed by the App itself (no external service).</li>
+            </ul>
+
+            <h2>4. Local-only storage</h2>
+            <p>All app data — including dance videos, extracted pose data, comparison
+            scores, and app settings — is stored locally in the App's sandbox on the
+            user's device. There is no cloud backup operated by us. Deleting the App
+            from the device removes all such data automatically.</p>
+            <p>The App provides an in-app option ("Settings &rarr; Delete all data")
+            to remove all stored content at any time.</p>
+
+            <h2>5. Advertising</h2>
+            <p>The App displays banner and rewarded interstitial ads via
+            <strong>Google AdMob</strong>. AdMob is operated by Google and its data
+            handling is governed by Google's own privacy policy.</p>
+            <ul>
+                <li><strong>Data shared with AdMob:</strong> Coarse device information
+                    and the device advertising identifier (IDFA on iOS, Google
+                    Advertising ID on Android), used by AdMob to serve ads. None of the
+                    user's dance video, audio, pose data, or comparison scores is ever
+                    shared with AdMob or any ad partner.</li>
+                <li><strong>iOS App Tracking Transparency (ATT):</strong> On iOS 14.5+
+                    the App shows the system ATT prompt on first launch. If the user
+                    declines, IDFA is not provided to AdMob and the user receives only
+                    non-personalized ads. All app features continue to work normally
+                    regardless of the user's ATT choice.</li>
+                <li><strong>Opt out:</strong> Users may further opt out of personalized
+                    ads via system settings
+                    (iOS: Settings &gt; Privacy &amp; Security &gt; Apple Advertising;
+                    Android: Settings &gt; Google &gt; Ads).</li>
+            </ul>
+
+            <h2>6. User-generated content</h2>
+            <p>The App allows the user to import videos from their gallery or record
+            new videos with the device camera. Such content stays on the user's device
+            and is not shared with us, with other users, or with any third party. The
+            user is responsible for only uploading content they have the right to use;
+            we display an in-app notice reminding users of this.</p>
+
+            <h2>7. Children</h2>
+            <p>The App is intended for general audiences (4+). The App does not
+            knowingly collect personal data from children. Because the App does not
+            collect or transmit personal data from anyone, no special handling for
+            children is required.</p>
+
+            <h2>8. Security</h2>
+            <p>Because no user data is transmitted outside the device, the standard
+            iOS / Android sandboxing provides the primary safeguard. The user's data
+            is protected to the same extent as any other data stored in the App's
+            sandbox by the operating system.</p>
+
+            <h2>9. Changes to this policy</h2>
+            <p>If this policy changes, the new version will be posted at this URL and
+            the "Last updated" date above will be revised.</p>
+
+            <h2>10. Contact</h2>
+            <p>For any privacy-related questions about ChallengeMe, contact:
+            <a href="mailto:tjdrhs90@gmail.com">tjdrhs90@gmail.com</a>.</p>
+        </div>
+
+        <!-- ====================  KOREAN  ==================== -->
+        <div class="lang-content" id="lang-ko">
+            <h1>ChallengeMe — 개인정보 처리방침</h1>
+            <p class="app-id">앱: ChallengeMe &middot; Bundle ID: <code>com.gonigon.challengeme</code></p>
+            <p class="effective-date">최종 개정일: 2026년 5월 14일</p>
+
+            <div class="callout">
+                <strong>요약.</strong> ChallengeMe 는 100% 디바이스 내(on-device) 동작
+                앱입니다. 별도의 서버를 운영하지 않으며, 계정 가입이 필요 없고, 사용자의
+                영상·오디오·포즈 데이터를 외부 어떤 서비스로도 전송하지 않습니다 — 제3자
+                AI 서비스 포함. AI 포즈 비교는 Google 의 on-device ML Kit SDK 를 통해
+                사용자 기기 안에서만 수행됩니다.
+            </div>
+
+            <h2>1. 운영 주체</h2>
+            <p>본 처리방침은 Gonigon 이 발행하는 모바일 애플리케이션 "ChallengeMe"
+            ("앱")에만 적용됩니다. 동일 개발자의 다른 앱은 각 앱별 개인정보 처리방침을
+            참조해주십시오.</p>
+
+            <h2>2. 본 앱이 접근하는 데이터</h2>
+            <p>본 앱은 사용자가 OS 권한 다이얼로그에서 동의한 경우에 한해 다음 데이터에
+            기기 내에서만 접근합니다.</p>
+            <ul>
+                <li><strong>카메라</strong> — 사용자의 댄스 영상 실시간 녹화에 사용.</li>
+                <li><strong>마이크</strong> — 영상과 함께 음성을 녹음하는 데 사용.</li>
+                <li><strong>사진 라이브러리</strong> — 갤러리의 댄스 영상을 가져오거나,
+                    녹화한 영상을 사진 앱에 저장하기 위해 사용.</li>
+            </ul>
+            <p>녹화·선택된 영상 파일은 사용자 기기의 앱 내부 저장소(sandbox)에만 저장되며
+            어떠한 서버로도 업로드되지 않습니다.</p>
+
+            <h2>3. 기기 내(on-device) AI 처리 — 제3자 AI 서비스 미사용</h2>
+            <p>본 앱의 "AI 비교" 기능은 Google 의 <strong>ML Kit Pose Detection</strong>
+            라이브러리를 사용합니다. 이는 on-device SDK 이며, Google 공식 문서에
+            "ML Kit 의 포즈 인식은 기기에서 전신 포즈 트래킹을 수행한다" 라고 명시되어
+            있습니다. 참고:
+            <a href="https://developers.google.com/ml-kit/vision/pose-detection"
+               target="_blank" rel="noopener">
+                developers.google.com/ml-kit/vision/pose-detection
+            </a>.</p>
+            <p>구체적으로:</p>
+            <ul>
+                <li>최초 사용 시 Google Play Services / iOS 프레임워크가 포즈 모델 파일
+                    1회 다운로드 (Google ML Kit 정책에 의함). 이후 모든 추론은 완전히
+                    오프라인.</li>
+                <li>영상 프레임, 오디오 데이터, 추출된 포즈 좌표 그 어느 것도 AI 추론
+                    서버, 클라우드 함수, 기타 제3자 AI 서비스로 전송되지 않습니다.</li>
+                <li>ML Kit 가 추출한 33개 관절 좌표는 앱 sandbox 의 로컬 JSON 파일로
+                    저장되며, 프레임별 유사도 점수는 앱 자체 알고리즘으로 계산됩니다
+                    (외부 서비스 미사용).</li>
+            </ul>
+
+            <h2>4. 로컬 전용 저장</h2>
+            <p>댄스 영상, 추출된 포즈 데이터, 비교 점수, 앱 설정 등 모든 앱 데이터는
+            사용자 기기의 앱 sandbox 에만 저장됩니다. 당사는 별도의 클라우드 백업을
+            운영하지 않습니다. 사용자가 앱을 삭제하면 모든 데이터는 자동으로 함께
+            삭제됩니다.</p>
+            <p>앱 내에서도 "설정 &rarr; 모든 데이터 삭제" 로 언제든 저장된 콘텐츠를
+            즉시 제거할 수 있습니다.</p>
+
+            <h2>5. 광고</h2>
+            <p>본 앱은 <strong>Google AdMob</strong> 을 통해 배너 광고 및 보상형 광고를
+            표시합니다. AdMob 은 Google 이 운영하며, 데이터 처리는 Google 의 자체
+            개인정보 처리방침에 따릅니다.</p>
+            <ul>
+                <li><strong>AdMob 에 제공되는 항목:</strong> 광고 게재에 필요한 일반
+                    디바이스 정보 및 광고식별자(iOS IDFA, Android 광고 ID). 사용자의
+                    댄스 영상·오디오·포즈 데이터·비교 점수는 AdMob 이나 그 어떤 광고
+                    파트너에게도 전달되지 않습니다.</li>
+                <li><strong>iOS 앱 추적 투명성(ATT):</strong> iOS 14.5 이상에서 첫 실행
+                    시 시스템 ATT 프롬프트를 표시합니다. 사용자가 거부할 경우 IDFA 는
+                    AdMob 에 전달되지 않으며 비개인화 광고만 노출됩니다. ATT 선택과
+                    무관하게 앱의 모든 기능은 정상 작동합니다.</li>
+                <li><strong>맞춤 광고 거부:</strong> 시스템 설정에서 추가로 거부할 수
+                    있습니다 (iOS: 설정 &gt; 개인정보 보호 및 보안 &gt; Apple 광고,
+                    Android: 설정 &gt; Google &gt; 광고).</li>
+            </ul>
+
+            <h2>6. 사용자 생성 콘텐츠</h2>
+            <p>사용자는 갤러리에서 영상을 가져오거나 기기 카메라로 새 영상을 녹화할 수
+            있습니다. 이러한 콘텐츠는 사용자 기기 안에만 남으며 당사, 다른 사용자, 또는
+            어떤 제3자에게도 공유되지 않습니다. 본인이 권리를 보유한 영상만 등록할
+            책임은 사용자에게 있으며, 앱은 등록 화면에 해당 안내 멘트를 표시합니다.</p>
+
+            <h2>7. 아동</h2>
+            <p>본 앱은 전체 이용가(4+) 입니다. 본 앱은 아동의 개인정보를 의도적으로
+            수집하지 않습니다. 본 앱은 어느 사용자로부터도 개인정보를 수집·전송하지
+            않으므로 아동에 대한 별도 처리는 필요하지 않습니다.</p>
+
+            <h2>8. 보안</h2>
+            <p>사용자 데이터가 기기 외부로 전송되지 않으므로, 운영체제(iOS/Android)의
+            기본 sandbox 격리가 1차 보호 장치 역할을 합니다. 사용자의 데이터는 앱
+            sandbox 내 다른 모든 데이터와 동일한 수준으로 OS 에 의해 보호됩니다.</p>
+
+            <h2>9. 정책 변경</h2>
+            <p>본 처리방침이 변경되는 경우 새 버전이 본 URL 에 게시되며 상단의
+            "최종 개정일" 이 갱신됩니다.</p>
+
+            <h2>10. 문의처</h2>
+            <p>ChallengeMe 의 개인정보 관련 문의는 다음 이메일로 연락 바랍니다:
+            <a href="mailto:tjdrhs90@gmail.com">tjdrhs90@gmail.com</a>.</p>
+        </div>
+    </div>
+
+    <script>
+        function switchLang(lang) {
+            document.querySelectorAll('.lang-content').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.lang-switcher button').forEach(el => el.classList.remove('active'));
+            document.getElementById('lang-' + lang).classList.add('active');
+            document.getElementById('btn-' + lang).classList.add('active');
+            document.documentElement.lang = lang;
+        }
+        if ((navigator.language || '').toLowerCase().startsWith('ko')) {
+            switchLang('ko');
+        }
+    </script>
+</body>
+</html>
